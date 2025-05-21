@@ -2,7 +2,8 @@
 TelegramGlassTheme
 
 ### Arch KDE Plasma
-On Wayland
+Kvantum Theme: [Flat Blur](https://www.pling.com/p/1326672/)
+Work on Wayland 
 
 Work on x11 with [ForceBlur](https://github.com/taj-ny/kwin-effects-forceblur) 
 
