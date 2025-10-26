@@ -27,10 +27,75 @@ Create and True flags:
 ```
 
 ```
-Open File in FirefoxDATA/Profile/chrome/.css
+Open File in FirefoxDATA/Profile/userChrome/.css
 Paste:
 
 ```
+@charset "UTF-8";
+@-moz-document url(chrome://browser/content/browser.xhtml) {
+
+    /* Transparencia completa del UI de Floorp / Firefox / Zen */
+
+    :root {
+        --tabpanel-background-color: transparent !important;
+        background: transparent !important;
+        --lwt-accent-color: transparent !important;
+        --lwt-accent-color-inactive: transparent !important;
+        --toolbar-bgcolor: transparent !important;
+        --chrome-secondary-background-color: transparent !important;
+        --chrome-background-color: transparent !important;
+    }
+
+    /* Ventana principal */
+    #main-window,
+    #browser,
+    #appcontent,
+    #tabbrowser-tabpanels,
+    .browserStack,
+    #tabbrowser-arrowscrollbox,
+    #navigator-toolbox,
+    #TabsToolbar,
+    #nav-bar,
+    #PersonalToolbar,
+    #toolbar-menubar,
+    .titlebar-color,
+    #titlebar {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    }
+
+    /* Evita que menús, popup panels, etc. pinten fondo sólido */
+    menupopup,
+    panel,
+    #appMenu-popup,
+    #context-navigation,
+    #contentAreaContextMenu {
+    background: transparent !important;
+    -moz-appearance: none !important;
+    color-scheme: light dark !important;
+    }
+
+    /* Quita color residual de bordes */
+    #TabsToolbar::after,
+    #nav-bar::after,
+    #navigator-toolbox::after {
+    background: transparent !important;
+    border: none !important;
+    }
+
+    /* Pestaña activa: fondo más opaco */
+    .tabbrowser-tab[selected="true"] .tab-background {
+        background: rgba(30, 30, 30, 0.9) !important;
+        backdrop-filter: blur(6px) !important;
+        border-radius: 8px 8px 0 0 !important;
+    }
+
+
+
+
+}
+
 
 ```
 
